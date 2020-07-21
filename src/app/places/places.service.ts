@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Place } from './place.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlacesService {
 
-  private places = [
+  private places: Place[] = [
     {
       id: '1',
       title: 'Mata-Mata',
@@ -32,7 +33,14 @@ export class PlacesService {
     });
   }
 
-  addPlaces(title, imgURL) {}
+  addPlaces(title: string, imgURL: string) {
+    this.places.push({
+      title,
+      imgURL,
+      comments: [],
+      id: this.places.length + 1 + ""
+    })
+  }
 
   deletePlaces() {}
 }
