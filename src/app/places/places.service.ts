@@ -38,9 +38,13 @@ export class PlacesService {
       title,
       imgURL,
       comments: [],
-      id: this.places.length + 1 + ""
-    })
+      id: this.places.length + 1 + ''
+    });
   }
 
-  deletePlaces() {}
+  deletePlaces(placeId) {
+    this.places = this.places.filter(place => {
+      return place.id !== placeId;
+    });
+  }
 }
