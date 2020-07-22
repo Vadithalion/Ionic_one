@@ -16,5 +16,4 @@ export class PlaceDetailPage implements OnInit {
       console.log(recipeId);
     });
   }
-
 }
